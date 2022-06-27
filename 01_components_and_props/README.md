@@ -126,7 +126,6 @@ The props argument in our Card component defines an object that React will pass 
 
 ### Resources
 
-- [Props Slides](https://docs.google.com/presentation/d/15tVPX6WTIRiwv7ZoHh6N2oIK0hcuZ1E9dN1NrKCpfjc/edit?usp=sharing)
 - [React](https://reactjs.org/)
 - [Babel](https://babeljs.io/)
 - [Creating React Apps](https://reactjs.org/docs/create-a-new-react-app.html)
