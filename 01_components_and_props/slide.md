@@ -25,13 +25,13 @@ The goals for Phase 2: </h2>
 
 <h2> ✅ Objectives </h2>
 
-✳️ Discuss the benefits of React over Vanilla JS
-✳️ Explain the importance of Components
-✳️ Practice writing components
-✳️ Define props and how to create them
-✳️ Recognize destructured props and how to work with them
-✳️ Recognize best practices when writing components and props
-✳️ Render multiple components from a list
+- [ ] Discuss the benefits of React over Vanilla JS
+- [ ] Explain the importance of Components
+- [ ] Practice writing components
+- [ ] Define props and how to create them
+- [ ] Recognize destructured props and how to work with them
+- [ ] Recognize best practices when writing components and props
+- [ ] Render multiple components from a list
 
 <!-- slide -->
 
