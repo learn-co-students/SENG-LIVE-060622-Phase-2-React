@@ -1,13 +1,19 @@
-import React from "react";
-//TODO: Add state for dark mode
+import {useState} from "react";
+
 const Header = () => {
+  const [darkMode, setDarkMode] = useState(true)
+
+  const handleClick = () => {
+    setDarkMode(!darkMode)
+  }
+ 
   return (
-    <header>
+    <header className={darkMode?null: "light"}>
       <h1>
         <span className="logo">{"//"}</span>
         Project Showcase
       </h1>
-      <button>Dark Mode</button>
+      <button onClick={handleClick} >{darkMode?"Light Mode" : "Dark Mode"}</button>
     </header>
   );
 }

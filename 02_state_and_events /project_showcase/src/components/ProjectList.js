@@ -1,11 +1,22 @@
+import {useState} from 'react'
+
 import ProjectListItem from "./ProjectListItem";
 //TODO: Add state for project filter
-const ProjectList = ({ projects }) => {
+const ProjectList = ({projects}) => {
+  const [search, setSearch] = useState("")
 
-  const projectListItems = projects.map((project) => (
+  const searchResults = projects.filter(project => {
+     return project.name.toLowerCase().includes(search.toLowerCase()) 
+    })
+  
+  console.log(searchResults)
+  const projectListItems = searchResults.map((project) => (
     <ProjectListItem key={project.id} {...project} />
   ));
 
+  const handleChange = (e) =>{
+    setSearch(e.target.value)
+  }
 
   return (
     <section>
@@ -19,7 +30,8 @@ const ProjectList = ({ projects }) => {
         <button>Phase 2</button>
         <button>Phase 1</button>
       </div>
-      <input type="text" placeholder="Search..."/>
+
+      <input onChange={handleChange} type="text" placeholder="Search..."/>
 
       <ul className="cards">{projectListItems}</ul>
     </section>
