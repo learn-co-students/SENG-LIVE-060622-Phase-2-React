@@ -135,6 +135,16 @@ We can also also refactor using a helper function:
 
 🏹 To work with state in a function component, we use the `useState` hook
 
+
+<!-- slide style="text-align: left;"-->
+<h2 style="text-align: center;"> Is it State? </h2>
+
+These three questions will help determine if something should be saved in state.
+
+1. Is it passed in from a parent via props? If so, it probably isn’t state.
+2. Does it remain unchanged over time? If so, it probably isn’t state.
+3. Can you compute it based on any other state or props in your component? If so, it isn’t state.
+
 <!-- slide style="text-align: left;"-->
 
 <h2 style="text-align: center;"> The useState hook </h2>
@@ -278,6 +288,8 @@ const projectListItems = searchResults.map((project) => (
 <br>
 
 <strong>Note:</strong> If the searchQuery is an empty string, the `filter()` will return all the project items
+
+
 
 <!-- slide style="text-align: left;"-->
 

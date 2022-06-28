@@ -1,4 +1,6 @@
+//TODO: Add state for claps
 const ProjectListItem = ({ id, about, image, link, name, phase }) => {
+
   return (
     <li className="card">
       <figure className="image">

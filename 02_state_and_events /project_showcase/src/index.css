@@ -43,6 +43,12 @@ body {
   --background: var(--white);
   --primary: var(--mid-turquoise);
 }
+/* temp */
+.light {
+  --color: var(--black);
+  --background: var(--white);
+  --primary: var(--mid-turquoise);
+}
 
 section {
   padding: 2rem;

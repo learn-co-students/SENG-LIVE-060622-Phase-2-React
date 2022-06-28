@@ -1,5 +1,5 @@
 import ProjectListItem from "./ProjectListItem";
-
+//TODO: Add state for project filter
 const ProjectList = ({ projects }) => {
 
   const projectListItems = projects.map((project) => (
