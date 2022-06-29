@@ -5,7 +5,7 @@ import ProjectForm from "./components/ProjectForm";
 import ProjectList from "./components/ProjectList";
 
 const App = () => {
-  const [projects, setProjects] = useState([]);
+  //Add projects to state
   //Move darkMode to app
 
   const handleClick = () => {
