@@ -69,7 +69,8 @@
       "about": "Meditation",
       "phase": 3,
       "link": "https://github.com/maifam/breathe_frontend",
-      "image": "https://i.imgur.com/hAuKx3K.png"
+      "image": "https://i.imgur.com/hAuKx3K.png",
+      "likes":0
     },
     {
       "id": 23,

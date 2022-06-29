@@ -1,7 +1,7 @@
 import ProjectListItem from "./ProjectListItem";
 import { useState } from "react";
 
-const ProjectList = ({ projects }) => {
+const ProjectList = ({ projects, handleLikes}) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const searchResults = projects.filter((project) => {
@@ -9,7 +9,7 @@ const ProjectList = ({ projects }) => {
   });
 
   const projectListItems = searchResults.map((project) => (
-    <ProjectListItem key={project.id} {...project} />
+    <ProjectListItem key={project.id} {...project} handleLikes={handleLikes} />
   ));
 
   const handleOnChange = (e) => setSearchQuery(e.target.value);

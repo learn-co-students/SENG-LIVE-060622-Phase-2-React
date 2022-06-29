@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from "react";
 
-const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const handleClick = () => setIsDarkMode(!isDarkMode);
+const Header = ({isDarkMode, toggleDarkMode}) => {
+
+  const handleClick = () => toggleDarkMode()
 
   const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
 
