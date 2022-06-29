@@ -29,7 +29,7 @@ https://labs.tadigital.com/index.php/2020/03/31/unidirectional-data-flow-in-reac
 
 <br>
 
-<p style="font-size: 65px";>"In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called <strong>“lifting state up”.</strong>"</p>
+<p style="font-size: 25px";>"In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called <strong>“lifting state up”.</strong>"</p>
 
 https://reactjs.org/docs/lifting-state-up.html
 

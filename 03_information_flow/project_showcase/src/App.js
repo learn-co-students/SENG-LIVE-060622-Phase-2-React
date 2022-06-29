@@ -6,18 +6,19 @@ import ProjectList from "./components/ProjectList";
 
 const App = () => {
   const [projects, setProjects] = useState([]);
+  //Move darkMode to app
 
   const handleClick = () => {
-    fetch("http://localhost:4000/projects")
-      .then((res) => res.json())
-      .then((projects) => setProjects(projects));
+    //Add click handler to fetch projects
   };
+
+  //Create a toggle method for darkMode
 
   return (
     <div className="App">
       <Header />
       <ProjectForm />
-      <button onClick={handleClick}>Load Projects</button>
+      <button >Load Projects</button>
       <ProjectList projects={projects} />
     </div>
   );
