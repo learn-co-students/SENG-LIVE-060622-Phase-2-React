@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ProjectListItem = ({ id, about, image, link, name, phase }) => {
+const ProjectListItem = ({ id, about, image, link, name, phase, removeProject }) => {
   const [clapCount, setClapCount] = useState(0);
 
   const handleClap = () => setClapCount(clapCount + 1);
@@ -23,9 +23,10 @@ const ProjectListItem = ({ id, about, image, link, name, phase }) => {
           </p>
         ) : null}
       </section>
-
+      
       <footer className="extra">
         <span className="badge blue">Phase {phase}</span>
+        <span className="badge blue" onClick={() => removeProject(id)} >Delete</span>
       </footer>
     </li>
   );

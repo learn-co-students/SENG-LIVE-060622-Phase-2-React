@@ -87,6 +87,15 @@
       "phase": 4,
       "link": "https://gamesrx.netlify.app",
       "image": "https://i.imgur.com/Japzh6v.png"
+    },
+    {
+      "name": "rose is cute the project",
+      "about": "my cute cat",
+      "phase": "2",
+      "link": "rose.com",
+      "image": "rose.png",
+      "likes": 0,
+      "id": 26
     }
   ]
 }

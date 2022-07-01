@@ -19,10 +19,17 @@ const ProjectForm = ({addProject}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    addProject(formData)
+    fetch('http://localhost:3000/projects',{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => addProject(data))
 
   }
-console.log(formData)
   return (
     <section>
       <form className="form" autoComplete="off" onSubmit={handleSubmit}>
