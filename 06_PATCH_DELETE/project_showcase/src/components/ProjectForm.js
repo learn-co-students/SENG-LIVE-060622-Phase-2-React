@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const ProjectForm = ({ updateProjects }) => {
+const ProjectForm = ({ updateProjects, projectID }) => {
   const [formData, setFormData] = useState({
     name: "",
     about: "",
@@ -8,6 +8,14 @@ const ProjectForm = ({ updateProjects }) => {
     link: "",
     image: "",
   });
+
+  useEffect(()=>{
+    if(projectID){
+      fetch(`http://localhost:3000/projects/${projectID}`)
+      .then(res => res.json())
+      .then(project => setFormData(project))
+    }
+  },[projectID])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,15 +25,14 @@ const ProjectForm = ({ updateProjects }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const configObj = {
-      method: "POST",
+      method: !projectID?"POST":"PATCH",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
-      body: JSON.stringify({ ...formData, claps: 0 }),
+      body: JSON.stringify(!projectID?{ ...formData, claps: 0 }:{...formData}),
     };
 
-    fetch("http://localhost:3000/projects", configObj)
+    fetch(!projectID?"http://localhost:3000/projects":`http://localhost:3000/projects/${projectID}`, configObj)
       .then((resp) => resp.json())
       .then((project) => {
         updateProjects(project);
@@ -42,7 +49,7 @@ const ProjectForm = ({ updateProjects }) => {
   return (
     <section>
       <form className="form" autoComplete="off" onSubmit={handleSubmit}>
-        <h3>Add New Project</h3>
+        <h3>{!projectID?"Add New Project":"Edit Project"}</h3>
 
         <label htmlFor="name">Name</label>
         <input
@@ -94,7 +101,7 @@ const ProjectForm = ({ updateProjects }) => {
           value={formData.image}
         />
 
-        <button type="submit">Add Project</button>
+        <button type="submit">{!projectID?"Add Project":"Update Project"}</button>
       </form>
     </section>
   );

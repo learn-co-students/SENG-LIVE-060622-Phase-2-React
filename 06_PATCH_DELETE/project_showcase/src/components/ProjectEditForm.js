@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const ProjectEditForm = () => {
+const ProjectEditForm = ({projectID, editProject}) => {
   const [formData, setFormData] = useState({
     name: "",
     about: "",
@@ -12,6 +12,12 @@ const ProjectEditForm = () => {
   const { name, about, phase, link, image } = formData;
 
 //fetch
+useEffect(()=>{
+  fetch(`http://localhost:3000/projects/${projectID}`)
+  .then(res => res.json())
+  .then(project => setFormData(project))
+
+},[projectID])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,9 +26,17 @@ const ProjectEditForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    //Edit here
+    fetch(`http://localhost:3000/projects/${projectID}`,{
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body:JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => editProject(data))
   }
-
+  console.log(formData)
   return (
     <form onSubmit={handleSubmit} className="form" autoComplete="off">
       <h3>Edit Project</h3>
