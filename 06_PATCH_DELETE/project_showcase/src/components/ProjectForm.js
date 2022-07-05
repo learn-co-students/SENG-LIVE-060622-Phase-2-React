@@ -1,14 +1,13 @@
 import { useState } from "react";
 
-const ProjectForm = ({ onAddProject }) => {
-  const initialState = {
+const ProjectForm = ({ updateProjects }) => {
+  const [formData, setFormData] = useState({
     name: "",
     about: "",
     phase: "",
     link: "",
     image: "",
-  };
-  const [formData, setFormData] = useState(initialState);
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,10 +25,10 @@ const ProjectForm = ({ onAddProject }) => {
       body: JSON.stringify({ ...formData, claps: 0 }),
     };
 
-    fetch("http://localhost:4000/projects", configObj)
+    fetch("http://localhost:3000/projects", configObj)
       .then((resp) => resp.json())
       .then((project) => {
-        onAddProject(project);
+        updateProjects(project);
         setFormData({
           name: "",
           about: "",

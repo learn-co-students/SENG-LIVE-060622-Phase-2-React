@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-const ProjectEditForm = ({ projectId, completeEditing }) => {
-  const initialState = {
+const ProjectEditForm = () => {
+  const [formData, setFormData] = useState({
     name: "",
     about: "",
     phase: "",
     link: "",
     image: "",
-  };
-
-  const [formData, setFormData] = useState(initialState);
+  });
 
   const { name, about, phase, link, image } = formData;
 
-  useEffect(() => {
-    fetch(`http://localhost:4000/projects/${projectId}`)
-      .then((res) => res.json())
-      .then((project) => setFormData(project));
-  }, [projectId]);
+//fetch
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,8 +20,7 @@ const ProjectEditForm = ({ projectId, completeEditing }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Add code here
-    completeEditing();
+    //Edit here
   }
 
   return (
