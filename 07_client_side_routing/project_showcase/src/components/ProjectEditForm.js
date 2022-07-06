@@ -16,7 +16,7 @@ const ProjectEditForm = ({ onUpdateProject }) => {
   // const history = useHistory()
 
   useEffect(() => {
-    fetch(`http://localhost:4000/projects/1`)
+    fetch(`http://localhost:3000/projects/1`)
       .then((res) => res.json())
       .then((project) => setFormData(project));
   }, []);

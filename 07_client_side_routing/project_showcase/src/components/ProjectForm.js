@@ -25,7 +25,7 @@ const ProjectForm = ({ onAddProject }) => {
       body: JSON.stringify({ ...formData, claps: 0 }),
     };
 
-    fetch("http://localhost:4000/projects", configObj)
+    fetch("http://localhost:3000/projects", configObj)
       .then((resp) => resp.json())
       .then((project) => {
         onAddProject(project);

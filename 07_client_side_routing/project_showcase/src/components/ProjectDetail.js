@@ -7,7 +7,7 @@ const ProjectDetail = () => {
   const id = 1;
 
   useEffect(() => {
-    fetch(`http://localhost:4000/projects/${id}`)
+    fetch(`http://localhost:3000/projects/${id}`)
       .then((r) => r.json())
       .then((project) => {
         setProject(project);

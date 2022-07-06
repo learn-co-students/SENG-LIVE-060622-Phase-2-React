@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import ProjectForm from "./components/ProjectForm";
 import ProjectList from "./components/ProjectList";
 import ProjectEditForm from "./components/ProjectEditForm";
-import ProjectPage from "./components/ProjectPage"
+import ProjectDetail from "./components/ProjectDetail"
 import Home from "./components/Home";
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/projects")
+    fetch("http://localhost:3000/projects")
       .then((resp) => resp.json())
       .then((projects) => setProjects(projects));
   }, []);
@@ -53,7 +53,6 @@ const App = () => {
       />
       <ProjectEditForm onUpdateProject={onUpdateProject} />
       <ProjectForm onAddProject={onAddProject} />
-      <ProjectPage />
     </div>
   );
 };
