@@ -5,7 +5,7 @@ const Home = () => {
 
   useEffect(() => {
     // fetch the 3 most recently added projects from json-server
-    fetch("http://localhost:4000/projects?_sort=id&_order=desc&_limit=3")
+    fetch("http://localhost:3000/projects?_sort=id&_order=desc&_limit=3")
       .then((r) => r.json())
       .then((recentProjects) => {
         setRecentProjects(recentProjects);
