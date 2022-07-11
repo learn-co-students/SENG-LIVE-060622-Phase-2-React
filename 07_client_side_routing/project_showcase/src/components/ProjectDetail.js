@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const ProjectDetail = () => {
   const [claps, setClaps] = useState(0);
   const [project, setProject] = useState(null);
-
-  const id = 1;
+ console.log(useParams)
+ console.log(useParams())
+  const {id} = useParams()
 
   useEffect(() => {
     fetch(`http://localhost:3000/projects/${id}`)
@@ -14,11 +16,15 @@ const ProjectDetail = () => {
       });
   }, [id]);
 
-  const { image, name, about, link, phase } = project;
 
   const handleClapClick = () => {
     setClaps((claps) => claps + 1);
   }
+
+  if(!project) return <h1>Loading</h1>
+
+  const { image, name, about, link, phase } = project;
+
 
   return (
     <section>

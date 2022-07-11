@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const ProjectForm = ({ onAddProject }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const ProjectForm = ({ onAddProject }) => {
     link: "",
     image: "",
   });
+
+  console.log(useParams())
 
   const handleChange = (e) => {
     const { name, value } = e.target;
